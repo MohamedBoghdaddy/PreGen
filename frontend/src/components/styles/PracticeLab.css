@@ -1,0 +1,53 @@
+.practice-lab {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.practice-lab h1 {
+  text-align: center;
+  color: #00796b;
+  margin-bottom: 1.5rem;
+}
+
+.practice-lab input {
+  width: 60%;
+  display: block;
+  margin: 0 auto 1rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.practice-lab button {
+  display: block;
+  margin: auto;
+  background: #00796b;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.problem-list {
+  margin-top: 1.5rem;
+}
+
+.problem-item {
+  background: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #00796b;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #00796b;
+  margin-top: 0.5rem;
+}
