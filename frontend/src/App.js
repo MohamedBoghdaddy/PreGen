@@ -27,12 +27,18 @@ import Contact from "./components/Contact/contact";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import AdminRoute from "./components/Auth/AdminRoute";
 
+// 🧠 AI Learning Pages
+import AITutor from "./components/Dashboard/pages/AITutor";
+import QuizGenerator from "./components/Dashboard/pages/QuizGenerator";
+import Assignments from "./components/Dashboard/pages/Assignments";
+import PracticeLab from "./components/Dashboard/pages/PracticeLab";
+
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          {/* Public Routes */}
+          {/* 🌐 Public Routes */}
           <Route
             path="/"
             element={
@@ -43,24 +49,10 @@ function App() {
               </>
             }
           />
-          <Route
-            path="/login"
-            element={
-              <>
-                <Login />
-              </>
-            }
-          />
-          <Route
-            path="/signup"
-            element={
-              <>
-                <Signup />
-              </>
-            }
-          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-          {/* Protected Routes */}
+          {/* 🔒 Protected Routes */}
           <Route
             path="/dashboard"
             element={
@@ -72,6 +64,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/settings"
             element={
@@ -84,6 +77,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/profile"
             element={
@@ -96,6 +90,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/analytics"
             element={
@@ -108,6 +103,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/contact"
             element={
@@ -120,6 +116,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/aichat"
             element={
@@ -133,7 +130,60 @@ function App() {
             }
           />
 
-          {/* Admin Routes */}
+          {/* 🧠 AI Learning System Routes */}
+          <Route
+            path="/ai-tutor"
+            element={
+              <ProtectedRoute>
+                <>
+                  <Sidebar />
+                  <AITutor />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/quizzes"
+            element={
+              <ProtectedRoute>
+                <>
+                  <Sidebar />
+                  <QuizGenerator />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/assignments"
+            element={
+              <ProtectedRoute>
+                <>
+                  <Sidebar />
+                  <Assignments />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/practice-lab"
+            element={
+              <ProtectedRoute>
+                <>
+                  <Sidebar />
+                  <PracticeLab />
+                  <Footer />
+                </>
+              </ProtectedRoute>
+            }
+          />
+
+          {/* 🧩 Admin Routes */}
           <Route
             path="/admin/dashboard"
             element={
