@@ -1,22 +1,57 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
+    username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    gender: { type: String, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     role: {
       type: String,
-      enum: ['student', 'teacher', 'admin', 'parent'],
-      default: 'student',
+      enum: ["user", "admin"],
+      default: "user",
     },
-    assignments: [
-      { type: mongoose.Schema.Types.ObjectId, ref: 'Assignment' },
+    receiveNotifications: {
+      type: Boolean,
+      default: true,
+    },
+    profilePhoto: {
+      type: String,
+    },
+
+    blocked: {
+      type: Boolean,
+      default: false,
+    },
+
+    blocked: {
+      type: Boolean,
+      default: false,
+    },
+
+    // models/UserModel.js
+
+    lastLogin: {
+      type: Date,
+    },
+    lastIP: {
+      type: String,
+    },
+    activityLog: [
+      {
+        action: String,
+        timestamp: Date,
+      },
     ],
+    profilePhoto: {
+      type: String, // URL or path
+    },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model("User", UserSchema);
+
+export default User;

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { protect, authorize } = require('../middleware/authMiddleware');
-const User = require('../models/userModel');
+const User = require('../models/UserModel');
 
 // All admin routes require authentication and admin role
 router.use(protect);

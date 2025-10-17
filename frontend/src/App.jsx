@@ -6,10 +6,8 @@ import StudentPortal from './pages/StudentPortal';
 import TeacherPortal from './pages/TeacherPortal';
 import ParentPortal from './pages/ParentPortal';
 import AdminDashboard from './pages/AdminDashboard';
+import Home from "./frontend/components/Home/home";
 
-/**
- * Root component that sets up routing and context providers.
- */
 const App = () => {
   return (
     <AuthProvider>
